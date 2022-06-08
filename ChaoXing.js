@@ -92,9 +92,12 @@ class ChaoXing {
       axios.get(url, { headers: this.headers }).then((result) => {
         if (result.data["result"] == 1) {
           let { channelList } = result.data;
-          for (let course of channelList) {
+
+          for (let i = 0; i < channelList.length; i++) {
+            const course = channelList[i];
             if (!course["content"]["course"]) {
-              delete channelList[course];
+              /* delete channelList[i]; */
+              channelList.splice(i, 1);
             }
           }
           this.courses = channelList;

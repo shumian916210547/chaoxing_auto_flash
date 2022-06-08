@@ -110,11 +110,11 @@ const do_work = async (cx) => {
 };
 
 const start = async () => {
-  const chaoXing = new ChaoXing(13576087803, "sm20000511");
+  const chaoXing = new ChaoXing(17679295697, "CHL13767875314QQ");
   chaoXing.init_explorer();
   console.info("登陆中...");
   if (await chaoXing.login()) {
-    console.info("已登陆账户：%d", 13576087803);
+    console.info("已登陆账户：%d", 17679295697);
     console.info("正在读取所有课程");
     if (await chaoXing.get_all_course()) {
       console.info("进行选课");
