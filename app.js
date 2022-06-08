@@ -109,12 +109,13 @@ const do_work = async (cx) => {
   }
 };
 
+const config = require("./setting.json");
 const start = async () => {
-  const chaoXing = new ChaoXing(17679295697, "CHL13767875314QQ");
+  const chaoXing = new ChaoXing(config.username, config.password);
   chaoXing.init_explorer();
   console.info("登陆中...");
   if (await chaoXing.login()) {
-    console.info("已登陆账户：%d", 17679295697);
+    console.info("已登陆账户：%d", config.username);
     console.info("正在读取所有课程");
     if (await chaoXing.get_all_course()) {
       console.info("进行选课");
